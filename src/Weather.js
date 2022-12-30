@@ -1,6 +1,8 @@
 import React from "react";
 import "./Weather.css";
+
 import weatherLogo from "./picture/pic1.svg";
+
 import weatherIcon1 from "./forcasticons/01d.svg";
 import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
@@ -33,20 +35,23 @@ export default function Weather() {
                   type="search"
                   value="Enter a city..."
                   className="form-control"
+                  autoFocus="on"
                 />
               </form>
             </div>
             <div className="col-1">
-              {" "}
               <form>
+                {" "}
                 <input type="submit" value="🔎" className="btn btn-light" />
               </form>
             </div>
             <div className="col-1">
               <form>
+                {" "}
                 <input type="submit" value="📍" className="btn btn-light" />
               </form>
             </div>
+
             <div className="col-3">
               <img
                 src={weatherLogo}
@@ -95,7 +100,7 @@ export default function Weather() {
             </div>
           </div>
           <div className="row mt-4">
-            <div className="col-2 forecastBox">
+            <div className="col-2 forecastBox leftedgebox">
               <div className="row">
                 <div classnName="col  text-center">
                   <div className="daytime text-center"> 03:00</div>
@@ -166,7 +171,7 @@ export default function Weather() {
                 <div className="daytemp text-center"> 14°C</div>
               </div>
             </div>
-            <div className="col-2 forecastBox d-none d-sm-block">
+            <div className="col-2 forecastBox rightedgebox d-none d-sm-block">
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -186,7 +191,7 @@ export default function Weather() {
             </div>
           </div>
           <div className="row mt-3 mb-4">
-            <div className="col-2 forecastBox">
+            <div className="col-2 forecastBox leftedgebox">
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -262,7 +267,7 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
-            <div className="col-2 forecastBox d-none d-sm-block">
+            <div className="col-2 forecastBox rightedgebox d-none d-sm-block ">
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
