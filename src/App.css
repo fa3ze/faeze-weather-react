@@ -1,0 +1,12 @@
+.references {
+  margin: 20px 0px 0px 205px;
+}
+ul {
+  list-style: none;
+}
+@media (max-width: 1400px) {
+  .references {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
