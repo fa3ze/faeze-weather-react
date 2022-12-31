@@ -1,14 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap");
+:root {
+  --day-color: #d6e5e5;
+  --night-color: #0b2748;
+  --primary-color: #74cccf;
+}
 .Weather {
   max-width: 1000px;
-  border: 1px solid black;
+  border: 1px solid var(--night-color);
+  border-radius: 10px;
   margin: 0 auto;
   display: block;
+  font-family: "East Sea Dokdo", cursive;
+  line-height: 1.5;
+  background-color: var(--day-color);
 }
 .main-body {
   max-width: 768px;
-  border: 1px solid black;
+  border: 1px solid var(--night-color);
+  border-radius: 2px;
   display: block;
   margin: 60px auto;
+  background-color: white;
 }
 
 /* The switch - the box around the slider */
@@ -34,7 +46,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--day-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -51,12 +63,21 @@
   transition: 0.4s;
 }
 
+.slider input[type="checkbox"]:checked ~ label {
+  background-color: #cbd3d8;
+  border-color: #869e9b;
+}
+
+.slider input[type="checkbox"]:checked ~ label::after {
+  background-color: #798f8c;
+  transform: translateX(29px);
+}
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--primary-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px var(--primary-color);
 }
 
 input:checked + .slider:before {
@@ -75,10 +96,14 @@ input:checked + .slider:before {
 }
 
 .forecastBox {
-  border: 1px solid blue;
+  border: 1px solid var(--night-color);
   border-radius: 5px;
   margin: 0 auto;
   display: block;
+  background-color: var(--day-color);
+}
+.temp {
+  position: relative;
 }
 @media (max-width: 980px) {
   .main-body {

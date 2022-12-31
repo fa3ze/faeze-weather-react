@@ -1,8 +1,6 @@
 import React from "react";
 import "./Weather.css";
 
-import weatherLogo from "./picture/pic1.svg";
-
 import weatherIcon1 from "./forcasticons/01d.svg";
 import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
@@ -29,7 +27,7 @@ export default function Weather() {
               </label>
             </div>
 
-            <div className="col-4">
+            <div className="col-5">
               <form>
                 <input
                   type="search"
@@ -39,27 +37,20 @@ export default function Weather() {
                 />
               </form>
             </div>
-            <div className="col-1">
+            <div className="col-2">
               <form>
                 {" "}
                 <input type="submit" value="🔎" className="btn btn-light" />
               </form>
             </div>
-            <div className="col-1">
+            <div className="col-2">
               <form>
                 {" "}
                 <input type="submit" value="📍" className="btn btn-light" />
               </form>
             </div>
-
-            <div className="col-3">
-              <img
-                src={weatherLogo}
-                alt="logo"
-                className="mt-1 img-fluid"
-              ></img>
-            </div>
           </div>
+          <div></div>
           <div className="city text-center mt-4">City</div>
           <div className="date text-center">last updated:</div>
           <div className="row">
@@ -74,16 +65,22 @@ export default function Weather() {
               <div className="row">
                 <div className="col mt-4">
                   {" "}
-                  temperature: <span className="btn btn-link">°C</span>|
-                  <span className="btn btn-link">°F</span>
+                  temperature: 19{" "}
+                  <span className="temp">
+                    <span className="btn btn-link">°C</span>|
+                    <span className="btn btn-link">°F</span>
+                  </span>
                 </div>
               </div>
               <div className="row">
                 {" "}
                 <div className="col">
                   {" "}
-                  feels like: <span className="btn btn-link">°C</span>|
-                  <span className="btn btn-link">°F</span>
+                  feels like: 20{" "}
+                  <span classnName="feelstemp">
+                    <span className="btn btn-link">°C</span>|
+                    <span className="btn btn-link">°F</span>
+                  </span>
                 </div>
               </div>
               <div className="row">
