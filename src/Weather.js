@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
-
+import Toggle from "./Toggle";
 import weatherIcon1 from "./forcasticons/01d.svg";
 import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
@@ -15,16 +15,15 @@ import weatherIcon9 from "./picture/0304.png";
 import weatherIcon10 from "./picture/0910.png";
 
 export default function Weather() {
+  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
+
   return (
-    <div className="Weather">
+    <div className={"Weather" + (isDarkModeEnabled ? " dark-theme" : "")}>
       <div className="container">
-        <div className="main-body">
+        <div className={"main-body" + (isDarkModeEnabled ? " dark-theme" : "")}>
           <div className="row text-center mt-2">
             <div className="col-3">
-              <label className="switch">
-                <input type="checkbox"></input>
-                <span className="slider round"></span>
-              </label>
+              <Toggle toggleHandler={setIsDarkModeEnabled} />
             </div>
 
             <div className="col-5">
@@ -97,7 +96,12 @@ export default function Weather() {
             </div>
           </div>
           <div className="row mt-4">
-            <div className="col-2 forecastBox leftedgebox">
+            <div
+              className={
+                "col-2 forecastBox leftedgebox" +
+                (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   <div className="daytime text-center"> 03:00</div>
@@ -114,7 +118,11 @@ export default function Weather() {
                 <div className="daytemp text-center"> 14°C</div>
               </div>
             </div>
-            <div className="col-2 forecastBox">
+            <div
+              className={
+                "col-2 forecastBox" + (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -132,7 +140,11 @@ export default function Weather() {
                 <div className="daytemp text-center"> 14°C</div>
               </div>
             </div>
-            <div className="col-2 forecastBox ">
+            <div
+              className={
+                "col-2 forecastBox " + (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -150,7 +162,11 @@ export default function Weather() {
                 <div className="daytemp text-center"> 14°C</div>
               </div>
             </div>
-            <div className="col-2 forecastBox ">
+            <div
+              className={
+                "col-2 forecastBox " + (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -168,7 +184,12 @@ export default function Weather() {
                 <div className="daytemp text-center"> 14°C</div>
               </div>
             </div>
-            <div className="col-2 forecastBox rightedgebox d-none d-sm-block">
+            <div
+              className={
+                "col-2 forecastBox rightedgebox d-none d-sm-block" +
+                (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -188,7 +209,12 @@ export default function Weather() {
             </div>
           </div>
           <div className="row mt-3 mb-4">
-            <div className="col-2 forecastBox leftedgebox">
+            <div
+              className={
+                "col-2 forecastBox leftedgebox" +
+                (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -207,7 +233,11 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
-            <div className="col-2 forecastBox">
+            <div
+              className={
+                "col-2 forecastBox" + (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -226,7 +256,11 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
-            <div className="col-2 forecastBox ">
+            <div
+              className={
+                "col-2 forecastBox " + (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -245,7 +279,11 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
-            <div className="col-2 forecastBox ">
+            <div
+              className={
+                "col-2 forecastBox " + (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}
@@ -264,7 +302,12 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
-            <div className="col-2 forecastBox rightedgebox d-none d-sm-block ">
+            <div
+              className={
+                "col-2 forecastBox rightedgebox d-none d-sm-block " +
+                (isDarkModeEnabled ? " dark-theme" : "")
+              }
+            >
               <div className="row">
                 <div classnName="col  text-center">
                   {" "}

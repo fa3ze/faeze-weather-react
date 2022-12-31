@@ -1,0 +1,46 @@
+:root {
+  --day-color: #d6e5e5;
+  --night-color: #0b2748;
+  --secondary-night-color: #144272;
+  --third-night-color: #2c74b3;
+  --primary-color: #74cccf;
+}
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle label {
+  background-color: var(--day-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle label::after {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  content: " ";
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transition: all ease-in-out 0.3s;
+  width: 26px;
+  height: 26px;
+}
+
+.toggle input[type="checkbox"]:checked ~ label {
+  background-color: var(--night-color);
+  border-color: var(--secondary-night-color);
+}
+
+.toggle input[type="checkbox"]:checked ~ label::after {
+  background-color: var(--third-night-color);
+  transform: translateX(29px);
+}

@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital@1&display=swap");
 .references {
   max-width: 1000px;
+  font-family: "Andika", sans-serif;
+}
+a {
+  color: #f6851f;
+  text-decoration: none;
+}
+a:visited {
+  color: #144272;
 }
