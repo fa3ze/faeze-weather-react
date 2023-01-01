@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import Toggle from "./Toggle";
+import MoreInfo from "./MoreInfo";
 import weatherIcon1 from "./forcasticons/01d.svg";
 import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
+import descriptionIcon from "./picture/description.png";
 import weatherIcon2 from "./picture/01d.png";
 import weatherIcon3 from "./picture/01n.png";
 import weatherIcon4 from "./picture/02d.png";
@@ -18,7 +20,7 @@ export default function Weather() {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
   return (
-    <div className={"Weather" + (isDarkModeEnabled ? " dark-theme" : "")}>
+    <div className={"Weather mt-5" + (isDarkModeEnabled ? " dark-theme" : "")}>
       <div className="container">
         <div className={"main-body" + (isDarkModeEnabled ? " dark-theme" : "")}>
           <div className="row text-center mt-2">
@@ -49,7 +51,6 @@ export default function Weather() {
               </form>
             </div>
           </div>
-          <div></div>
           <div className="city text-center mt-4">City</div>
           <div className="date text-center">last updated:</div>
           <div className="row">
@@ -60,12 +61,12 @@ export default function Weather() {
                 className="img-fluid"
               ></img>
             </div>
-            <div className="col-6 mt-5">
+            <div className=" col-6 mt-5">
               <div className="row">
-                <div className="col mt-4">
+                <div className="col">
                   {" "}
-                  temperature: 19{" "}
-                  <span className="temp">
+                  <span className="temperature">19</span>{" "}
+                  <span className="temp-degree">
                     <span className="btn btn-link">°C</span>|
                     <span className="btn btn-link">°F</span>
                   </span>
@@ -83,14 +84,20 @@ export default function Weather() {
                 </div>
               </div>
               <div className="row">
-                <div className="col mt-1">
+                <div className="col-6 mt-2  d-none d-md-block">
                   <img src={windIcon} alt="wind" width="40" /> km/h
                 </div>
               </div>
               <div className="row">
-                <div className="col mt-2">
+                <div className="col mt-3  d-none d-md-block">
                   {" "}
                   <img src={humidityIcon} alt="humidity" width="40" /> %
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6 mt-2  d-none d-md-block description">
+                  <img src={descriptionIcon} alt="description" width="40" />{" "}
+                  description
                 </div>
               </div>
             </div>
@@ -326,6 +333,7 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
+            <MoreInfo />
           </div>
         </div>
       </div>

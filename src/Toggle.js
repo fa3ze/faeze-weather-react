@@ -12,7 +12,7 @@ export default function Toggle(props) {
   }
 
   return (
-    <div className="toggle d-none d-md-block">
+    <div className="toggle">
       <input type="checkbox" id="toggle" onChange={handleClick} />
       <label for="toggle"></label>
     </div>

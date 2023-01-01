@@ -5,7 +5,30 @@
   --secondary-night-color: #144272;
   --third-night-color: #2c74b3;
   --primary-color: #74cccf;
+  --main-font-size: 64px;
 }
+.btn-link {
+  color: #febf10 !important;
+  text-decoration: none !important;
+}
+.btn-link:visited {
+  color: #144272 !important;
+}
+.temp-degree .btn-link {
+  font-size: 24px !important;
+}
+.city {
+  font-size: var(--main-font-size);
+}
+.temperature {
+  font-size: var(--main-font-size);
+}
+.temp-degree {
+  position: relative;
+  top: -20px;
+  font-size: 24px;
+}
+
 .Weather {
   max-width: 1000px;
   border: 1px solid var(--night-color);
