@@ -61,7 +61,9 @@ body {
 .forecastBox.dark-theme {
   background-color: var(--secondary-night-color);
 }
-
+.date {
+  font-size: 22px;
+}
 .forecastBox {
   border: 1px solid var(--night-color);
   border-radius: 5px;

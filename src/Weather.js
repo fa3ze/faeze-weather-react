@@ -3,6 +3,7 @@ import "./Weather.css";
 import Toggle from "./Toggle";
 import MoreInfo from "./MoreInfo";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import weatherIcon1 from "./forcasticons/01d.svg";
 import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
@@ -44,7 +45,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       fellstemp: response.data.main.feels_like,
       humidity: response.data.main.humidity,
-      date: "wednesday 7:00pm",
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
       wind: response.data.wind.speed,
@@ -91,7 +92,7 @@ export default function Weather(props) {
             </div>
             <div className="city text-center mt-4">{weatherData.city}</div>
             <div className="date text-center">
-              last updated:{weatherData.date}
+              last updated: <FormattedDate date={weatherData.date} />
             </div>
             <div className="row">
               <div className="col-6">
