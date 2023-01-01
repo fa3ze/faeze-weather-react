@@ -61,7 +61,10 @@ body {
 .forecastBox.dark-theme {
   background-color: var(--secondary-night-color);
 }
-.date {
+.search-box,
+.date,
+.feel-like,
+.description {
   font-size: 22px;
 }
 .forecastBox {
