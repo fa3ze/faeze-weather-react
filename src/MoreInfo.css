@@ -1,2 +1,3 @@
-import React, { useState } from "react";
-import "./Weather.css";
+.show-more-box {
+  color: #0b2748;
+}

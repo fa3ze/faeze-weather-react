@@ -15,10 +15,22 @@ import weatherIcon7 from "./picture/13.png";
 import weatherIcon8 from "./picture/50.png";
 import weatherIcon9 from "./picture/0304.png";
 import weatherIcon10 from "./picture/0910.png";
+import uvIcon from "./picture/uvi.png";
+import sunriseIcon from "./picture/sunrise.png";
+import sunsetIcon from "./picture/sunset.png";
+import percipitationIcon from "./picture/percipitation.png";
 
 export default function Weather() {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
+  const [isShown, setIsShown] = useState(false);
 
+  const handleClick = (event) => {
+    // 👇️ toggle shown state
+    setIsShown((current) => !current);
+
+    // 👇️ or simply set it to true
+    // setIsShown(true);
+  };
   return (
     <div className={"Weather mt-5" + (isDarkModeEnabled ? " dark-theme" : "")}>
       <div className="container">
@@ -83,138 +95,21 @@ export default function Weather() {
                   </span>
                 </div>
               </div>
+
               <div className="row">
-                <div className="col-6 mt-2  d-none d-md-block">
-                  <img src={windIcon} alt="wind" width="40" /> km/h
-                </div>
-              </div>
-              <div className="row">
-                <div className="col mt-3  d-none d-md-block">
-                  {" "}
-                  <img src={humidityIcon} alt="humidity" width="40" /> %
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-6 mt-2  d-none d-md-block description">
+                <div className="col-6 mt-2   description">
                   <img src={descriptionIcon} alt="description" width="40" />{" "}
                   description
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="row mt-4">
-            <div
-              className={
-                "col-2 forecastBox leftedgebox" +
-                (isDarkModeEnabled ? " dark-theme" : "")
-              }
-            >
               <div className="row">
-                <div classnName="col  text-center">
-                  <div className="daytime text-center"> 03:00</div>
+                <div className="col-6 mt-2   description">
+                  <img src={humidityIcon} alt="humidity" width="40" /> %
                 </div>
-              </div>
-              <div className="row">
-                <img
-                  src={weatherIcon2}
-                  alt="weathericon"
-                  className="img-fluid"
-                />
-              </div>{" "}
-              <div className="row">
-                <div className="daytemp text-center"> 14°C</div>
-              </div>
-            </div>
-            <div
-              className={
-                "col-2 forecastBox" + (isDarkModeEnabled ? " dark-theme" : "")
-              }
-            >
-              <div className="row">
-                <div classnName="col  text-center">
-                  {" "}
-                  <div className="daytime text-center"> 03:00</div>
-                </div>
-              </div>
-              <div className="row" S>
-                <img
-                  src={weatherIcon3}
-                  alt="weathericon"
-                  className="img-fluid"
-                />
-              </div>{" "}
-              <div className="row">
-                <div className="daytemp text-center"> 14°C</div>
-              </div>
-            </div>
-            <div
-              className={
-                "col-2 forecastBox " + (isDarkModeEnabled ? " dark-theme" : "")
-              }
-            >
-              <div className="row">
-                <div classnName="col  text-center">
-                  {" "}
-                  <div className="daytime text-center"> 03:00</div>
-                </div>
-              </div>
-              <div className="row">
-                <img
-                  src={weatherIcon4}
-                  alt="weathericon"
-                  className="img-fluid"
-                />
-              </div>{" "}
-              <div className="row">
-                <div className="daytemp text-center"> 14°C</div>
-              </div>
-            </div>
-            <div
-              className={
-                "col-2 forecastBox " + (isDarkModeEnabled ? " dark-theme" : "")
-              }
-            >
-              <div className="row">
-                <div classnName="col  text-center">
-                  {" "}
-                  <div className="daytime text-center"> 03:00</div>
-                </div>
-              </div>
-              <div className="row">
-                <img
-                  src={weatherIcon5}
-                  alt="weathericon"
-                  className="img-fluid"
-                />
-              </div>{" "}
-              <div className="row">
-                <div className="daytemp text-center"> 14°C</div>
-              </div>
-            </div>
-            <div
-              className={
-                "col-2 forecastBox rightedgebox d-none d-sm-block" +
-                (isDarkModeEnabled ? " dark-theme" : "")
-              }
-            >
-              <div className="row">
-                <div classnName="col  text-center">
-                  {" "}
-                  <div className="daytime text-center"> 03:00</div>
-                </div>
-              </div>
-              <div className="row">
-                <img
-                  src={weatherIcon6}
-                  alt="weathericon"
-                  className="img-fluid"
-                />
-              </div>{" "}
-              <div className="row">
-                <div className="daytemp text-center"> 14°C</div>
               </div>
             </div>
           </div>
+
           <div className="row mt-3 mb-4">
             <div
               className={
@@ -333,7 +228,25 @@ export default function Weather() {
                 <span className="col-6 maxTemp">15°C</span>
               </div>
             </div>
-            <MoreInfo />
+          </div>
+
+          <div>
+            <button
+              className={
+                "btn btn-light  show-button mb-4" +
+                (isDarkModeEnabled ? " dark-theme" : "")
+              }
+              onClick={handleClick}
+            >
+              {isShown ? "Show Less " : "Show more Data"}
+            </button>
+
+            {/* 👇️ show elements on click */}
+            {isShown && (
+              <div>
+                <MoreInfo />
+              </div>
+            )}
           </div>
         </div>
       </div>
