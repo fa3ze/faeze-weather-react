@@ -1,27 +1,26 @@
 import React, { useState } from "react";
-import Toggle from "./Toggle";
 import "./Toggle.css";
 import "./Weather.css";
 import "./MoreInfo.css";
-import weatherIcon1 from "./forcasticons/01d.svg";
-import humidityIcon from "./picture/humidity.png";
+
+//import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
-import descriptionIcon from "./picture/description.png";
+//import descriptionIcon from "./picture/description.png";
 import weatherIcon2 from "./picture/01d.png";
 import weatherIcon3 from "./picture/01n.png";
 import weatherIcon4 from "./picture/02d.png";
 import weatherIcon5 from "./picture/02n.png";
 import weatherIcon6 from "./picture/11.png";
-import weatherIcon7 from "./picture/13.png";
-import weatherIcon8 from "./picture/50.png";
-import weatherIcon9 from "./picture/0304.png";
-import weatherIcon10 from "./picture/0910.png";
+//import weatherIcon7 from "./picture/13.png";
+//import weatherIcon8 from "./picture/50.png";
+//import weatherIcon9 from "./picture/0304.png";
+//import weatherIcon10 from "./picture/0910.png";
 import uvIcon from "./picture/uvi.png";
 import sunriseIcon from "./picture/sunrise.png";
 import sunsetIcon from "./picture/sunset.png";
 import percipitationIcon from "./picture/percipitation.png";
 export default function Info() {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
+  const [isDarkModeEnabled] = useState(false);
   return (
     <div className="container show-more-box">
       <div className="row mt-4">

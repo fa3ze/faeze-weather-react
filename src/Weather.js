@@ -3,25 +3,25 @@ import "./Weather.css";
 import Toggle from "./Toggle";
 import MoreInfo from "./MoreInfo";
 import axios from "axios";
+import WeatherIcon from "./WeatherIcon";
 import FormattedDate from "./FormattedDate";
-import weatherIcon1 from "./forcasticons/01d.svg";
 import humidityIcon from "./picture/humidity.png";
-import windIcon from "./picture/wind.png";
+//import windIcon from "./picture/wind.png";
 import descriptionIcon from "./picture/description.png";
 import weatherIcon2 from "./picture/01d.png";
-import weatherIcon3 from "./picture/01n.png";
-import weatherIcon4 from "./picture/02d.png";
-import weatherIcon5 from "./picture/02n.png";
-import weatherIcon6 from "./picture/11.png";
+//import weatherIcon3 from "./picture/01n.png";
+//import weatherIcon4 from "./picture/02d.png";
+//import weatherIcon5 from "./picture/02n.png";
+//import weatherIcon6 from "./picture/11.png";
 import weatherIcon7 from "./picture/13.png";
 import weatherIcon8 from "./picture/50.png";
 import weatherIcon9 from "./picture/0304.png";
 import weatherIcon10 from "./picture/0910.png";
-import uvIcon from "./picture/uvi.png";
-import sunriseIcon from "./picture/sunrise.png";
-import sunsetIcon from "./picture/sunset.png";
-import percipitationIcon from "./picture/percipitation.png";
-import { faListCheck } from "@fortawesome/free-solid-svg-icons";
+//import uvIcon from "./picture/uvi.png";
+//import sunriseIcon from "./picture/sunrise.png";
+//import sunsetIcon from "./picture/sunset.png";
+//import percipitationIcon from "./picture/percipitation.png";
+//import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function Weather(props) {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
@@ -38,7 +38,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -47,7 +46,8 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
+      icon: response.data.weather[0].icon,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -109,13 +109,14 @@ export default function Weather(props) {
               last updated: <FormattedDate date={weatherData.date} />
             </div>
             <div className="row">
-              <div className="col-6">
-                <img
-                  src={weatherData.iconUrl}
-                  alt="weather icon"
-                  className="img-fluid"
-                ></img>
+              <div className=" col-6">
+                {" "}
+                <WeatherIcon
+                  code={weatherData.icon}
+                  alt={weatherData.description}
+                />
               </div>
+
               <div className=" col-6 mt-5">
                 <div className="row">
                   <div className="col">
