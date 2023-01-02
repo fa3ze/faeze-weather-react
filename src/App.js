@@ -24,6 +24,15 @@ function App() {
           >
             github
           </a>
+          and is hosted on{" "}
+          <a
+            href="https://melodious-fudge-7679a2.netlify.app/"
+            alt="netlify"
+            rel="noreferrer"
+            target="_blank"
+          >
+            netlify
+          </a>
           .{" "}
           <div>
             icons by{" "}

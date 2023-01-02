@@ -121,7 +121,7 @@ export default function Weather(props) {
               <div className=" col-6 mt-5">
                 <div className="row">
                   <div className="col">
-                    <WeatherTemperature celcius={weatherData.temperature} />
+                    <WeatherTemperature celsius={weatherData.temperature} />
                   </div>
                 </div>
                 <div className="row">
