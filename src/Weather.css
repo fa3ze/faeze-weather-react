@@ -10,14 +10,21 @@
 body {
   text-transform: capitalize;
 }
-.btn-link {
+a {
+  color: #f6851f;
+  text-decoration: none;
+}
+a:visited {
+  color: #144272;
+}
+.unit {
   color: #febf10 !important;
   text-decoration: none !important;
 }
 .btn-link:visited {
   color: #144272 !important;
 }
-.temp-degree .btn-link {
+.unit {
   font-size: 24px !important;
 }
 .city {
