@@ -37,11 +37,7 @@ export default function WeatherIcon(props) {
   return (
     <div>
       {" "}
-      <img
-        src={codeMapping[props.code]}
-        alt={props.alt}
-        className="img-fluid"
-      />
+      <img src={codeMapping[props.code]} alt={props.alt} />
     </div>
   );
 }

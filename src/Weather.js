@@ -5,6 +5,7 @@ import MoreInfo from "./MoreInfo";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import humidityIcon from "./picture/humidity.png";
 //import windIcon from "./picture/wind.png";
 import descriptionIcon from "./picture/description.png";
@@ -120,14 +121,7 @@ export default function Weather(props) {
               <div className=" col-6 mt-5">
                 <div className="row">
                   <div className="col">
-                    {" "}
-                    <span className="temperature">
-                      {Math.round(weatherData.temperature)}
-                    </span>{" "}
-                    <span className="temp-degree">
-                      <span className="btn btn-link">°C</span>|
-                      <span className="btn btn-link">°F</span>
-                    </span>
+                    <WeatherTemperature celcius={weatherData.temperature} />
                   </div>
                 </div>
                 <div className="row">
@@ -145,13 +139,13 @@ export default function Weather(props) {
                 </div>
 
                 <div className="row">
-                  <div className="col-6 mt-2   description">
+                  <div className="col-6 mt-2  d-none d-md-block description">
                     <img src={descriptionIcon} alt="description" width="40" />{" "}
                     {weatherData.description}
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6 mt-2   description">
+                  <div className="col-6 mt-2 d-none d-lg-block  description">
                     <img src={humidityIcon} alt="humidity" width="40" />
                     {weatherData.humidity} %
                   </div>
