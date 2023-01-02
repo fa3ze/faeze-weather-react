@@ -12,10 +12,14 @@ body {
 }
 a {
   color: #f6851f;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 a:visited {
-  color: #144272;
+  color: #f6851f !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #f6851f !important;
 }
 .unit {
   color: #febf10 !important;
@@ -33,7 +37,7 @@ a:visited {
 .temperature {
   font-size: var(--main-font-size);
 }
-.temp-degree {
+.unit {
   position: relative;
   top: -20px;
   font-size: 24px;
