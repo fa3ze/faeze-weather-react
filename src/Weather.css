@@ -21,26 +21,30 @@ a:visited {
 a:hover {
   color: #f6851f !important;
 }
-.unit {
+.unit,
+.feel-unit {
   color: #febf10 !important;
   text-decoration: none !important;
 }
-.btn-link:visited {
-  color: #144272 !important;
-}
-.unit {
-  font-size: 24px !important;
-}
+
 .city {
   font-size: var(--main-font-size);
 }
-.temperature {
+.current-temperature {
   font-size: var(--main-font-size);
+}
+.feel-temperature {
+  font-size: 30px;
 }
 .unit {
   position: relative;
   top: -20px;
-  font-size: 24px;
+  font-size: 22px;
+}
+.feel-unit {
+  position: relative;
+  top: -3px;
+  font-size: 20px;
 }
 
 .Weather {

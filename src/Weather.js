@@ -6,6 +6,7 @@ import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherTemperatureFeel from "./WeatherTemperatureFeel";
 import humidityIcon from "./picture/humidity.png";
 //import windIcon from "./picture/wind.png";
 import descriptionIcon from "./picture/description.png";
@@ -127,14 +128,7 @@ export default function Weather(props) {
                 <div className="row">
                   {" "}
                   <div className="col">
-                    <span className="feel-like">
-                      {" "}
-                      feels like: {Math.round(weatherData.fellstemp)}
-                    </span>
-                    <span classnName="feelstemp">
-                      <span className="btn btn-link">°C</span>|
-                      <span className="btn btn-link">°F</span>
-                    </span>
+                    <WeatherTemperatureFeel celsius={weatherData.fellstemp} />
                   </div>
                 </div>
 
