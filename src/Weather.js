@@ -7,6 +7,7 @@ import WeatherIcon from "./WeatherIcon";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherTemperatureFeel from "./WeatherTemperatureFeel";
+import CurrentLocation from "./CurrentLocation";
 import humidityIcon from "./picture/humidity.png";
 //import windIcon from "./picture/wind.png";
 import descriptionIcon from "./picture/description.png";
@@ -19,6 +20,7 @@ import weatherIcon7 from "./picture/13.png";
 import weatherIcon8 from "./picture/50.png";
 import weatherIcon9 from "./picture/0304.png";
 import weatherIcon10 from "./picture/0910.png";
+
 //import uvIcon from "./picture/uvi.png";
 //import sunriseIcon from "./picture/sunrise.png";
 //import sunsetIcon from "./picture/sunset.png";
@@ -100,10 +102,7 @@ export default function Weather(props) {
                 </form>
               </div>
               <div className="col-2">
-                <form>
-                  {" "}
-                  <input type="submit" value="📍" className="btn btn-light" />
-                </form>
+                <CurrentLocation setCity={setCity} search={search} />
               </div>
             </div>
             <div className="city text-center mt-4">{weatherData.city}</div>
