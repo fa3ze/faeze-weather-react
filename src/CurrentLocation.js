@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./Weather.css";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CurrentLocation(props) {
   function handleResponse(response) {
@@ -24,16 +26,9 @@ export default function CurrentLocation(props) {
 
   return (
     <div className="CurrentLocation">
-      {" "}
-      <form>
-        {" "}
-        <input
-          type="submit"
-          value="📍"
-          className="btn btn-light"
-          onClick={handleLocation}
-        />
-      </form>
+      <button type="submit" className="btn btn-light" onClick={handleLocation}>
+        <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>
+      </button>
     </div>
   );
 }

@@ -8,9 +8,13 @@ import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherTemperatureFeel from "./WeatherTemperatureFeel";
 import CurrentLocation from "./CurrentLocation";
-import humidityIcon from "./picture/humidity.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlassLocation } from "@fortawesome/free-solid-svg-icons";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 //import windIcon from "./picture/wind.png";
-import descriptionIcon from "./picture/description.png";
+
 import weatherIcon2 from "./picture/01d.png";
 //import weatherIcon3 from "./picture/01n.png";
 //import weatherIcon4 from "./picture/02d.png";
@@ -25,7 +29,6 @@ import weatherIcon10 from "./picture/0910.png";
 //import sunriseIcon from "./picture/sunrise.png";
 //import sunsetIcon from "./picture/sunset.png";
 //import percipitationIcon from "./picture/percipitation.png";
-//import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function Weather(props) {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
@@ -95,10 +98,13 @@ export default function Weather(props) {
                   />
                 </form>
               </div>
-              <div className="col-2">
+              <div className="col-1">
                 <form>
-                  {" "}
-                  <input type="submit" value="🔎" className="btn btn-light" />
+                  <button type="submit" className="btn btn-light">
+                    <FontAwesomeIcon
+                      icon={faMagnifyingGlassLocation}
+                    ></FontAwesomeIcon>
+                  </button>
                 </form>
               </div>
               <div className="col-2">
@@ -133,14 +139,22 @@ export default function Weather(props) {
 
                 <div className="row">
                   <div className="col-6 mt-2  d-none d-md-block description">
-                    <img src={descriptionIcon} alt="description" width="40" />{" "}
-                    {weatherData.description}
+                    <span className="fontawesome-description">
+                      <FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
+                    </span>
+                    {""} {weatherData.description} {""}
+                    <span className="fontawesome-description">
+                      <FontAwesomeIcon icon={faQuoteRight}></FontAwesomeIcon>
+                    </span>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6 mt-2 d-none d-lg-block  description">
-                    <img src={humidityIcon} alt="humidity" width="40" />
-                    {weatherData.humidity} %
+                  <div className="col-6 mt-2 d-none d-md-block  description">
+                    <span className="fontawesome-humidity">
+                      {" "}
+                      <FontAwesomeIcon icon={faDroplet}></FontAwesomeIcon>
+                    </span>
+                    {""} {weatherData.humidity} %
                   </div>
                 </div>
               </div>

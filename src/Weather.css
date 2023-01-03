@@ -5,25 +5,44 @@
   --secondary-night-color: #144272;
   --third-night-color: #2c74b3;
   --primary-color: #74cccf;
+  --secondary-color: #f6851f;
   --main-font-size: 64px;
 }
-body {
-  text-transform: capitalize;
-}
+
 a {
-  color: #f6851f;
+  color: var(--secondary-color);
   text-decoration: none !important;
 }
 a:visited {
-  color: #f6851f !important;
+  color: #ef4823 !important;
   text-decoration: none !important;
 }
 a:hover {
-  color: #f6851f !important;
+  color: var(--secondary-color) !important;
 }
+.Weather {
+  max-width: 1000px;
+  border: 1px solid var(--night-color);
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+  font-family: "East Sea Dokdo", cursive;
+  line-height: 1.5;
+  background-color: var(--day-color);
+  text-transform: capitalize;
+}
+.main-body {
+  max-width: 768px;
+  border: 1px solid var(--night-color);
+  border-radius: 2px;
+  display: block;
+  margin: 60px auto;
+  background-color: white;
+}
+
 .unit,
 .feel-unit {
-  color: #febf10 !important;
+  color: var(--secondary-color) !important;
   text-decoration: none !important;
 }
 
@@ -46,24 +65,16 @@ a:hover {
   top: -3px;
   font-size: 20px;
 }
-
-.Weather {
-  max-width: 1000px;
-  border: 1px solid var(--night-color);
-  border-radius: 10px;
-  margin: 0 auto;
-  display: block;
-  font-family: "East Sea Dokdo", cursive;
-  line-height: 1.5;
-  background-color: var(--day-color);
+.fontawesome-description {
+  font-size: 12px;
+  position: relative;
+  top: -4px;
+  color: var(--secondary-color);
 }
-.main-body {
-  max-width: 768px;
-  border: 1px solid var(--night-color);
-  border-radius: 2px;
-  display: block;
-  margin: 60px auto;
-  background-color: white;
+.fontawesome-humidity {
+  position: relative;
+  top: 5px;
+  color: var(--primary-color);
 }
 
 .Weather.dark-theme {
@@ -95,7 +106,7 @@ a:hover {
 .show-button {
   display: block !important;
   margin: 0 auto !important;
-  font-size: 26px !important;
+  font-size: 18px !important;
 }
 .show-button.dark-theme {
   background-color: var(--secondary-night-color);
