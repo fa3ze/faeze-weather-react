@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "./Toggle.css";
 import "./Weather.css";
-import "./MoreInfo.css";
 
 //import humidityIcon from "./picture/humidity.png";
 import windIcon from "./picture/wind.png";
