@@ -144,13 +144,13 @@ export default function Weather(props) {
               </div>
             </div>
 
-            <div className="mt-3 mb-4">
+            <div className="m-2">
               <WeatherForecastDay coordinates={weatherData.coordinates} />
             </div>
             <div>
               <button
                 className={
-                  "btn btn-light  show-button mb-4" +
+                  "btn btn-light  show-button mb-4 mt-4" +
                   (isDarkModeEnabled ? " dark-theme" : "")
                 }
                 onClick={handleClick}
