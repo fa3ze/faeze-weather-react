@@ -14,7 +14,7 @@ export default function Toggle(props) {
   return (
     <div className="toggle">
       <input type="checkbox" id="toggle" onChange={handleClick} />
-      <label for="toggle"></label>
+      <label htmlFor="toggle"></label>
     </div>
   );
 }

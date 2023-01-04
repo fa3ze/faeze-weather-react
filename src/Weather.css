@@ -6,7 +6,7 @@
   --third-night-color: #2c74b3;
   --primary-color: #74cccf;
   --secondary-color: #f6851f;
-  --main-font-size: 64px;
+  --main-font-size: 56px;
 }
 
 a {
@@ -21,7 +21,7 @@ a:hover {
   color: var(--secondary-color) !important;
 }
 .Weather {
-  max-width: 1000px;
+  max-width: 1100px;
   border: 1px solid var(--night-color);
   border-radius: 10px;
   margin: 0 auto;
@@ -31,8 +31,9 @@ a:hover {
   background-color: var(--day-color);
   text-transform: capitalize;
 }
+
 .main-body {
-  max-width: 768px;
+  max-width: 900px;
   border: 1px solid var(--night-color);
   border-radius: 2px;
   display: block;
@@ -53,20 +54,20 @@ a:hover {
   font-size: var(--main-font-size);
 }
 .feel-temperature {
-  font-size: 30px;
+  font-size: 32px;
 }
 .unit {
   position: relative;
-  top: -20px;
-  font-size: 22px;
+  top: -12px;
+  font-size: 24px;
 }
 .feel-unit {
   position: relative;
-  top: -3px;
-  font-size: 20px;
+  top: -1px;
+  font-size: 18px;
 }
 .fontawesome-description {
-  font-size: 12px;
+  font-size: 14px;
   position: relative;
   top: -4px;
   color: var(--secondary-color);
@@ -91,7 +92,7 @@ a:hover {
 .date,
 .feel-like,
 .description {
-  font-size: 20px;
+  font-size: 28px;
 }
 .forecastBox {
   border: 1px solid var(--night-color);
@@ -100,10 +101,12 @@ a:hover {
   display: block;
   background-color: var(--day-color);
   color: #0b2748;
+  font-size: 22px;
 }
 .temp {
   position: relative;
 }
+
 .minTemp {
   opacity: 0.7;
 }
@@ -123,15 +126,36 @@ a:hover {
 @media (max-width: 980px) {
   .main-body {
     max-width: 600px;
-
     margin: 30px auto;
   }
-}
-@media (max-width: 1445px) {
-  .leftedgebox {
-    margin: 0px 0px 0px 20px;
+  .minTemp,
+  .maxTemp {
+    font-size: 10px;
   }
-  .rightedgebox {
-    margin: 0px 20px 0px 0px;
+  .city {
+    font-size: 48px;
+  }
+  .current-temperature {
+    font-size: 40px;
+  }
+  .feel-temperature {
+    font-size: 18px;
+  }
+  .unit {
+    position: relative;
+    top: -12px;
+    font-size: 16px;
+  }
+  .feel-unit {
+    font-size: 14px;
+  }
+  .fontawesome-description {
+    font-size: 10px;
+  }
+  .search-box,
+  .date,
+  .feel-like,
+  .description {
+    font-size: 14px;
   }
 }
