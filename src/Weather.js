@@ -14,6 +14,7 @@ import { faMagnifyingGlassLocation } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
@@ -172,6 +173,20 @@ export default function Weather(props) {
   } else {
     search();
 
-    return "loading...";
+    return (
+      <div>
+        <MagnifyingGlass
+          visible={true}
+          height="100"
+          width="100"
+          ariaLabel="MagnifyingGlass-loading"
+          wrapperStyle={{}}
+          wrapperClass="MagnifyingGlass-wrapper"
+          glassColor="#c0efff"
+          color="#0B2748"
+          className="text-center"
+        />
+      </div>
+    );
   }
 }
