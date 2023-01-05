@@ -13,7 +13,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlassLocation } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
-import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import { MagnifyingGlass } from "react-loader-spinner";
 
 export default function Weather(props) {
@@ -133,15 +132,6 @@ export default function Weather(props) {
                     <span className="fontawesome-description">
                       <FontAwesomeIcon icon={faQuoteRight}></FontAwesomeIcon>
                     </span>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6 mt-2 d-none d-md-block  description">
-                    <span className="fontawesome-humidity">
-                      {" "}
-                      <FontAwesomeIcon icon={faDroplet}></FontAwesomeIcon>
-                    </span>
-                    {""} {weatherData.humidity} %
                   </div>
                 </div>
               </div>
