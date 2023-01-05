@@ -116,7 +116,7 @@ a:hover {
 
 .show-button {
   display: block !important;
-  margin: 0 auto !important;
+  margin: 20px auto;
   font-size: 18px !important;
 }
 .show-button.dark-theme {

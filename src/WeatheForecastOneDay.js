@@ -5,12 +5,12 @@ export default function WeatherForecastOneDay(props) {
   const [isDarkModeEnabled] = useState(false);
   function maxTemp() {
     let temperature = Math.round(props.data.temp.max);
-    return `${temperature}°`;
+    return `${temperature}°C`;
   }
 
   function minTemp() {
     let temperature = Math.round(props.data.temp.min);
-    return `${temperature}°`;
+    return `${temperature}°C`;
   }
 
   function day() {

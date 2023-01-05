@@ -22,7 +22,6 @@ export default function Weather(props) {
   const handleClick = (event) => {
     // toggle shown state
     setIsShown((current) => !current);
-
     //  or simply set it to true  // setIsShown(true);
   };
 
@@ -39,9 +38,11 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
+      sunriseTime: response.data.sys.sunrise * 1000,
+      sunsetTime: response.data.sys.sunset * 1000,
+      timezone: response.data.timezone / 3600,
     });
   }
   function handleSubmit(event) {
@@ -151,7 +152,7 @@ export default function Weather(props) {
             <div>
               <button
                 className={
-                  "btn btn-light  show-button mb-4 mt-4" +
+                  "btn btn-light  show-button text-center" +
                   (isDarkModeEnabled ? " dark-theme" : "")
                 }
                 onClick={handleClick}
@@ -162,7 +163,7 @@ export default function Weather(props) {
               {/* 👇️ show elements on click */}
               {isShown && (
                 <div>
-                  <MoreInfo />
+                  <MoreInfo data={weatherData} />
                 </div>
               )}
             </div>
