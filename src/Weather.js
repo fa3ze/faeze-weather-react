@@ -40,6 +40,7 @@ export default function Weather(props) {
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
+      pressure: response.data.main.pressure,
       sunriseTime: response.data.sys.sunrise * 1000,
       sunsetTime: response.data.sys.sunset * 1000,
       timezone: response.data.timezone / 3600,

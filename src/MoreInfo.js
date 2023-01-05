@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import "./Weather.css";
 import windIcon from "./picture/wind.png";
 import uvIcon from "./picture/uvi.png";
+import humidityIcon from "./picture/humidity.png";
 import sunriseIcon from "./picture/sunrise.png";
 import sunsetIcon from "./picture/sunset.png";
-import percipitationIcon from "./picture/percipitation.png";
+import pressureIcon from "./picture/pressure.png";
 import cloudy from "./picture/cloudy.png";
 export default function Info(props) {
   function getTime(timestamp, timeZone) {
@@ -25,95 +28,52 @@ export default function Info(props) {
 
   return (
     <div className="container show-more-box">
-      <div className="row mt-4">
-        <div className="col-2 forecastBox ">
-          <div className="row">
-            <div classnName="col  text-center">
-              {" "}
-              <div className="daytime text-center"> 03:00</div>
-            </div>
-          </div>
-          <div className="row">
-            <img src={cloudy} alt="weathericon" className="img-fluid" />
-          </div>{" "}
-          <div className="row">
-            <div className="daytemp text-center"> 14°C</div>
-          </div>
+      <div className="row ">
+        <div className="col m-2 forecastBox ">
+          <div className="daytime text-center"> 03:00</div>
+          <img src={cloudy} alt="weathericon" className="img-fluid" />
+          <div className="daytemp text-center"> 14°C</div>
         </div>
       </div>
-      <div className="row m-4">
-        <div className="col-2 forecastBox ">
-          <div className="row">
-            <div classnName="col  text-center">
-              <div className=" text-center"> percipitation</div>
-            </div>
-          </div>
-          <div className="row">
-            <img
-              src={percipitationIcon}
-              alt="percipitationicon"
-              className="img-fluid"
-            />
-          </div>{" "}
-          <div className="row">
-            <div className=" text-center"> %</div>
+
+      <div className="row ">
+        <div className="col m-2 forecastBox ">
+          <div className=" text-center"> pressure</div>
+          <img
+            src={pressureIcon}
+            alt="percipitationicon"
+            className="img-fluid"
+          />
+          <div className=" text-center">
+            {props.data.pressure} {""}hPa
           </div>
         </div>
-        <div className="col-2 forecastBox">
-          <div className="row">
-            <div classnName="col  text-center">
-              {" "}
-              <div className="daytime text-center"> wind</div>
-            </div>
-          </div>
-          <div className="row">
-            <img src={windIcon} alt="windicon" className="img-fluid" />
-          </div>{" "}
-          <div className="row">
-            <div className=" text-center">{props.data.wind} km/h</div>
+
+        <div className="col m-2 forecastBox">
+          <div className="daytime text-center"> humidity</div>
+          <img src={humidityIcon} alt="windicon" className="img-fluid" />
+          <div className=" text-center">{props.data.humidity} %</div>
+        </div>
+
+        <div className="col m-2 forecastBox ">
+          <div className=" text-center"> wind</div>
+          <img src={windIcon} alt="windicon" className="img-fluid" />
+          <div className=" text-center">
+            {" "}
+            {props.data.wind} <small>km/h</small>
           </div>
         </div>
-        <div className="col-2 forecastBox ">
-          <div className="row">
-            <div classnName="col  text-center">
-              {" "}
-              <div className=" text-center"> uvi</div>
-            </div>
-          </div>
-          <div className="row">
-            <img src={uvIcon} alt="uviIcon" className="img-fluid" />
-          </div>{" "}
-          <div className="row">
-            <div className=" text-center"> 14°C</div>
-          </div>
+
+        <div className="col m-2 forecastBox ">
+          <div className="text-center"> sunrise</div>
+          <img src={sunriseIcon} alt="sunriseIcon" className="img-fluid" />
+          <div className=" text-center"> {sunriseFormatTime}</div>
         </div>
-        <div className="col-2 forecastBox ">
-          <div className="row">
-            <div classnName="col  text-center">
-              {" "}
-              <div className="text-center"> sunrise</div>
-            </div>
-          </div>
-          <div className="row">
-            <img src={sunriseIcon} alt="sunriseIcon" className="img-fluid" />
-          </div>{" "}
-          <div className="row">
-            <div className=" text-center"> {sunriseFormatTime}</div>
-          </div>
-        </div>
-        <div className="col-2 forecastBox">
-          <div className="row">
-            <div classnName="col  text-center">
-              {" "}
-              <div className=" text-center"> sunset</div>
-            </div>
-          </div>
-          <div className="row">
-            <img src={sunsetIcon} alt="sunsetIcon" className="img-fluid" />
-          </div>{" "}
-          <div className="row">
-            <div className="daytemp text-center">{sunsetFormatTime}</div>
-          </div>
+
+        <div className="col m-2 forecastBox">
+          <div className=" text-center"> sunset</div>
+          <img src={sunsetIcon} alt="sunsetIcon" className="img-fluid" />
+          <div className="daytemp text-center">{sunsetFormatTime}</div>
         </div>
       </div>
     </div>

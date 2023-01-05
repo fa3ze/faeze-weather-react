@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import WeatherForecastIcon from "./WeatherForecastIcon";
 import "./Weather.css";
 export default function WeatherForecastOneDay(props) {
-  const [isDarkModeEnabled] = useState(false);
   function maxTemp() {
     let temperature = Math.round(props.data.temp.max);
     return `${temperature}°C`;
@@ -24,11 +23,7 @@ export default function WeatherForecastOneDay(props) {
 
   return (
     <div>
-      <div
-        className={
-          "forecastBox text-center" + (isDarkModeEnabled ? " dark-theme" : "")
-        }
-      >
+      <div className="forecastBox text-center">
         <div className="daytime "> {day()}</div>
         <div>
           <WeatherForecastIcon code={props.data.weather[0].icon} />
