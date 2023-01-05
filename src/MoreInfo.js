@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-//import WeatherForecastOneHour from "./WeatherForecastOneHour";
+import React from "react";
 import "./Weather.css";
 import windIcon from "./picture/wind.png";
-
 import humidityIcon from "./picture/humidity.png";
 import sunriseIcon from "./picture/sunrise.png";
 import sunsetIcon from "./picture/sunset.png";
 import pressureIcon from "./picture/pressure.png";
-import cloudy from "./picture/cloudy.png";
+import WeatherForecastHour from "./WeatherForecastHour";
+
 export default function Info(props) {
   function getTime(timestamp, timeZone) {
     let date = new Date(timestamp);
@@ -28,12 +26,11 @@ export default function Info(props) {
 
   return (
     <div className="container show-more-box">
-      <div className="row ">
-        <div className="col m-2 forecastBox ">
-          <div className="daytime text-center"> 03:00</div>
-          <img src={cloudy} alt="weathericon" className="img-fluid" />
-          <div className="daytemp text-center"> 14°C</div>
-        </div>
+      <div>
+        <WeatherForecastHour
+          coordinates={props.data.coordinates}
+          data={props.data}
+        />
       </div>
 
       <div className="row ">

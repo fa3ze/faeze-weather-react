@@ -131,6 +131,9 @@ img {
   font-size: 16px;
   text-transform: none !important;
 }
+.hour {
+  font-size: 18px;
+}
 @media (max-width: 980px) {
   .main-body {
     max-width: 600px;
