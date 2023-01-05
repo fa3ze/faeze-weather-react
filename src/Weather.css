@@ -127,6 +127,10 @@ img {
   background-color: var(--secondary-night-color);
   color: var(--day-color);
 }
+.info {
+  font-size: 16px;
+  text-transform: none !important;
+}
 @media (max-width: 980px) {
   .main-body {
     max-width: 600px;

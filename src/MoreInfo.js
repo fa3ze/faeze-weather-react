@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+//import WeatherForecastOneHour from "./WeatherForecastOneHour";
 import "./Weather.css";
 import windIcon from "./picture/wind.png";
-import uvIcon from "./picture/uvi.png";
+
 import humidityIcon from "./picture/humidity.png";
 import sunriseIcon from "./picture/sunrise.png";
 import sunsetIcon from "./picture/sunset.png";
@@ -44,7 +44,7 @@ export default function Info(props) {
             alt="percipitationicon"
             className="img-fluid"
           />
-          <div className=" text-center">
+          <div className=" text-center info">
             {props.data.pressure} {""}hPa
           </div>
         </div>
@@ -52,28 +52,25 @@ export default function Info(props) {
         <div className="col m-2 forecastBox">
           <div className="daytime text-center"> humidity</div>
           <img src={humidityIcon} alt="windicon" className="img-fluid" />
-          <div className=" text-center">{props.data.humidity} %</div>
+          <div className=" text-center info">{props.data.humidity} %</div>
         </div>
 
         <div className="col m-2 forecastBox ">
           <div className=" text-center"> wind</div>
           <img src={windIcon} alt="windicon" className="img-fluid" />
-          <div className=" text-center">
-            {" "}
-            {props.data.wind} <small>km/h</small>
-          </div>
+          <div className=" text-center info"> {props.data.wind} km/h</div>
         </div>
 
         <div className="col m-2 forecastBox ">
           <div className="text-center"> sunrise</div>
           <img src={sunriseIcon} alt="sunriseIcon" className="img-fluid" />
-          <div className=" text-center"> {sunriseFormatTime}</div>
+          <div className=" text-center info"> {sunriseFormatTime}</div>
         </div>
 
         <div className="col m-2 forecastBox">
           <div className=" text-center"> sunset</div>
           <img src={sunsetIcon} alt="sunsetIcon" className="img-fluid" />
-          <div className="daytemp text-center">{sunsetFormatTime}</div>
+          <div className="daytemp text-center info">{sunsetFormatTime}</div>
         </div>
       </div>
     </div>
